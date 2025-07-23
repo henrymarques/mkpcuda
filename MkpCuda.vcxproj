@@ -10,6 +10,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Individuo.h" />
+    <ClInclude Include="src\Solucao.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{511FAB5E-AF29-9FC0-11A3-46EFF31D5EDE}</ProjectGuid>
     <RootNamespace>MkpCuda</RootNamespace>
