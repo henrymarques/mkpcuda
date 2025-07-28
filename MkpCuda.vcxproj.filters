@@ -1,3 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Arquivos de cabeçalhos">
+      <UniqueIdentifier>{c5a07f0f-6fcf-4b82-beda-8a493117360a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de código-fonte">
+      <UniqueIdentifier>{e4f1c28d-03ef-419c-829b-5f139ff11b3b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Individuo.h">
+      <Filter>Arquivos de cabeçalhos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Solucao.h">
+      <Filter>Arquivos de cabeçalhos</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>Arquivos de código-fonte</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
