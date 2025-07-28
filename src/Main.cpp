@@ -23,6 +23,10 @@ int main(int argc, char** argv)
     }
 
     using namespace mochila;
+    using namespace configuracoes;
+
+    qtdIndividuos = atoi(argv[2]);
+    qtdGeracoes = atoi(argv[3]);
 
     file >> qtdItens >> qtdDimensoes >> melhorSolucaoJaEncontrada;
 
@@ -57,6 +61,21 @@ int main(int argc, char** argv)
     file.close();
 
     // fluxo vem aqui
+
+    // iniciarPopulacao(qtdIndividuos);
+    for (int geracao = 0; geracao < qtdGeracoes; geracao++) {
+        // Individuo individuoNovo{};
+        // encontrarMelhorIndividuo();
+        // do {
+        // auto [i1, i2] = selecionarPorTorneio();
+        // individuoNovo = cruzar(i1, i2);
+        // if (!ehViavel(individuoNovo)) {
+        // dropAdd(&individuoNovo);
+        // }
+        // } while (ehDuplicado(individuoNovo));
+        // substituirPiorDaGeracao(&individuoNovo); // referencia?
+        // atualizarMelhorSolucao();
+    }
 
     // liberação de memória
 

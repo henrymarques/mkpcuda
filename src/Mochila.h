@@ -8,6 +8,12 @@ int qtdItens;
 int qtdDimensoes;
 int melhorSolucaoJaEncontrada;
 }
+
+namespace configuracoes
+{
+int qtdIndividuos;
+int qtdGeracoes;
+}
 /*
 class Mochila
 {
