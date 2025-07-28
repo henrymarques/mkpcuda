@@ -28,6 +28,7 @@ int main(int argc, char** argv)
 
     int* montante = new int[qtdItens];
     int* medidas = new int[qtdItens * qtdDimensoes];
+    int* restricoes = new int[qtdDimensoes];
 
     for (int i = 0; i < qtdItens; i++)
     {
@@ -36,7 +37,34 @@ int main(int argc, char** argv)
 
     for (int i = 0; i < qtdItens * qtdDimensoes; i++)
     {
+        file >> medidas[i];
+    }
 
+    for (int i = 0; i < qtdDimensoes; i++)
+    {
+        file >> restricoes[i];
+    }
+
+    //
+
+    for (int i = 0; i < qtdItens; i++)
+    {
+        std::cout << montante[i] << ' ';
+    }
+
+    std::cout << std::endl;
+
+    for (int i = 0; i < qtdItens * qtdDimensoes; i++)
+    {
+        if (i % qtdItens == 0) std::cout << std::endl;
+        std::cout << medidas[i] << ' ';
+    }
+
+    std::cout << std::endl;
+
+    for (int i = 0; i < qtdDimensoes; i++)
+    {
+        std::cout << restricoes[i] << ' ';
     }
 
     delete[] montante;
