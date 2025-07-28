@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 
+#include "Mochila.h"
+
 int main(int argc, char** argv)
 {
 #ifdef _MSC_VER
@@ -20,55 +22,52 @@ int main(int argc, char** argv)
         return EXIT_FAILURE;
     }
 
-    int qtdItens{};
-    int qtdDimensoes{};
-    int melhorSolucaoJaEncontrada{};
+    using namespace mochila;
 
     file >> qtdItens >> qtdDimensoes >> melhorSolucaoJaEncontrada;
 
     int* montante = new int[qtdItens];
-    int* medidas = new int[qtdItens * qtdDimensoes];
-    int* restricoes = new int[qtdDimensoes];
+    int** itens = new int* [qtdItens];
+
+    for (int i = 0; i < qtdItens; i++)
+    {
+        itens[i] = new int[qtdDimensoes];
+    }
 
     for (int i = 0; i < qtdItens; i++)
     {
         file >> montante[i];
     }
 
-    for (int i = 0; i < qtdItens * qtdDimensoes; i++)
-    {
-        file >> medidas[i];
-    }
-
     for (int i = 0; i < qtdDimensoes; i++)
     {
-        file >> restricoes[i];
+        for (int j = 0; j < qtdItens; j++)
+        {
+            file >> itens[j][i];
+            // itens[j + qtdItens * i] = itens2[j][i];
+        }
     }
 
-    //
+    capacidades = new int[qtdDimensoes];
+    for (int i = 0; i < qtdDimensoes; i++)
+    {
+        file >> capacidades[i];
+    }
+
+    file.close();
+
+    // fluxo vem aqui
+
+    // liberação de memória
+
+    delete[] capacidades;
+    delete[] montante;
 
     for (int i = 0; i < qtdItens; i++)
     {
-        std::cout << montante[i] << ' ';
+        delete[] itens[i];
     }
-
-    std::cout << std::endl;
-
-    for (int i = 0; i < qtdItens * qtdDimensoes; i++)
-    {
-        if (i % qtdItens == 0) std::cout << std::endl;
-        std::cout << medidas[i] << ' ';
-    }
-
-    std::cout << std::endl;
-
-    for (int i = 0; i < qtdDimensoes; i++)
-    {
-        std::cout << restricoes[i] << ' ';
-    }
-
-    delete[] montante;
-    delete[] medidas;
+    delete[] itens;
 
     return 0;
 }

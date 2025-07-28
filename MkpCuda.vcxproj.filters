@@ -12,7 +12,7 @@
     <ClInclude Include="src\Individuo.h">
       <Filter>Arquivos de cabeçalhos</Filter>
     </ClInclude>
-    <ClInclude Include="src\Solucao.h">
+    <ClInclude Include="src\Mochila.h">
       <Filter>Arquivos de cabeçalhos</Filter>
     </ClInclude>
   </ItemGroup>
